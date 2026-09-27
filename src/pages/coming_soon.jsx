@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 export default function ComingSoon({ 
   targetDate = "2026-10-15T00:00:00", // Cambiá esto a tu fecha objetivo
-  title = "LIVE RANKING & STATS",
-  subtitle = "Estamos desarrollando la plataforma de analítica y cuadros interactivos para el circuito FIP. Muy pronto disponible." 
+  title = "LIVE PADEL",
+  subtitle = "El primer ranking en vivo del mundo. Ranking proyectado en vivo, estadísticas y mucho más." 
 }) {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
   const [email, setEmail] = useState("");
@@ -193,70 +193,6 @@ export default function ComingSoon({
             </div>
           ))}
         </div>
-
-        {/* Formulario de captura de Email / Notificación */}
-        <div
-          style={{
-            backgroundColor: "#111827",
-            border: "1px solid #1e293b",
-            borderRadius: "0.75rem",
-            padding: "1.5rem",
-            boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)"
-          }}
-        >
-          {subscribed ? (
-            <div style={{ color: "#10b981", fontWeight: "700", fontSize: "0.9rem" }}>
-              ✔ ¡Listo! Te avisaremos apenas abramos el acceso.
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubscribe}
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: "0.5rem",
-                maxWidth: "460px",
-                margin: "0 auto",
-                flexWrap: "wrap"
-              }}
-            >
-              <input
-                type="email"
-                required
-                placeholder="Ingresá tu email para enterarte primero..."
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                style={{
-                  flex: "1 1 220px",
-                  backgroundColor: "#0b0f17",
-                  border: "1px solid #1e293b",
-                  borderRadius: "0.5rem",
-                  padding: "0.65rem 0.85rem",
-                  color: "#ffffff",
-                  fontSize: "0.85rem",
-                  outline: "none"
-                }}
-              />
-              <button
-                type="submit"
-                style={{
-                  backgroundColor: "#064e3b",
-                  color: "#a3e635",
-                  border: "1px solid #10b981",
-                  borderRadius: "0.5rem",
-                  padding: "0.65rem 1.1rem",
-                  fontSize: "0.82rem",
-                  fontWeight: "800",
-                  cursor: "pointer",
-                  letterSpacing: "0.03em",
-                  flex: "0 0 auto",
-                  transition: "all 0.2s"
-                }}
-              >
-                AVISARME
-              </button>
-            </form>
-          )}
         </div>
 
         {/* Footer discreto */}
@@ -269,9 +205,8 @@ export default function ComingSoon({
             letterSpacing: "0.05em"
           }}
         >
-          FIP RANKING ANALYTICS &copy; {new Date().getFullYear()}
+          LIVE PADEL &copy; {new Date().getFullYear()}
         </div>
       </div>
-    </div>
   );
 }
